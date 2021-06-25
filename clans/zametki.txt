@@ -1,0 +1,54 @@
+Возможности:
+	Расширить клан
+	Передать монеты другому клану
+	Пригласить игрока
+	Выгнать игрока
+	Сменить тип клана
+	Сменить игроку роль	(не выше своей)
+	
+Роли:
+elder (старейшина) - 1
+co-leader (зам. лидера) - 2
+leader (лидер) - 4
+
+суммировать для выдачи прав нескольким группам
+Например: 
+	приглашать игрока = 7, т.е. приглашать могут все, кроме участников
+	выгонять из клана = 6, т.е. лидер и зам могут, а старейшина - нет
+	
+Handle	g_hRInvitePerm,				//Invite players to clan		1
+		g_hRGiveCoinsToClan,		//Give coins to other clan		2
+		g_hRExpandClan,				//Expand clan					3
+		g_hRKickPlayer,				//Kick player					4
+		g_hRChangeType,				//Change clan's type			5
+		g_hRChangeRole;				//Change role of player			6
+		
+============================================================================================
+sm_clans_logs N	//1 - логировать, 0 - не логировать
+Логи флаги:
+0			ничего
+1			убийства
+2			изменение кредов
+4			переименования
+8			создание/удаление/обнуление клана
+16			изгнание/удаление/обнуление игрока
+32			смена типа
+64			смена роли(сюда же смена лидерства)
+128			изменение слотов в клане
+512			клан чат
+
+#define LOG_KILLS 1
+#define LOG_TRANSFER 2
+#define LOG_RENAMES 4
+#define LOG_CLANACTION 8
+#define LOG_CLIENTACTION 16
+#define LOG_CHANGETYPE 32
+#define LOG_CHANGEROLE 64
+#define LOG_SLOTS 128
+#define LOG_CLANCHAT 256
+
+дальше пока свободны
+
+Игрок из клана совершил действие по отношению к игроку из клана | type (сумма флагов)
+
+playerid|playerName|clanid|clanName|action|toWhomPlayerID|toWhomPlayerName|toWhomClanid|toWhomClanName
