@@ -19,7 +19,7 @@ static const char color_t[ZCOLOR][] = {"{DEFAULT}", "{RED}", "{LIGHTPURPLE}", "{
 	color_c[ZCOLOR][] = {"\x01", "\x02", "\x03", "\x04", "\x05", "\x06", "\x07", "\x08", "\x09", "\x10", "\x0B", "\x0C", "\x0E", "\x0A"};
 
 
-stock void CGOPrintToChat(int iClient, const char[] message, any ...)
+stock void CPrintToChat(int iClient, const char[] message, any ...)
 {
 	SetGlobalTransTarget(iClient);
 	VFormat(g_sBuf, sizeof g_sBuf, message, 3);
@@ -47,7 +47,7 @@ stock void CGOPrintToChat(int iClient, const char[] message, any ...)
 	PrintToChat(iClient, " %s", g_sBuf[iLastStart]);
 }
 
-stock void CGOPrintToChatAll(const char[] message, any ...)
+stock void CPrintToChatAll(const char[] message, any ...)
 {
 	int iLastStart = 0, i = 0;
 	
@@ -79,7 +79,7 @@ stock void CGOPrintToChatAll(const char[] message, any ...)
 	}
 }
 
-stock void CGOReplaceColorSay(char[] text, int maxlength)
+stock void CReplaceColorSay(char[] text, int maxlength)
 {
 	for(int i = 0; i < ZCOLOR; i++)
 	{

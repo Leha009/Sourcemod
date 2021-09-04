@@ -3,8 +3,8 @@
 #include <sdkhooks>
 #include <cstrike>
 #include <clans>
-//#include <csgo_colors>		//CS GO
-#include <morecolors>		//CSS
+#include <csgo_colors>		//CS GO
+//#include <morecolors>		//CSS
 //#include <colors>			//For CSS v34
 
 #pragma newdecls required

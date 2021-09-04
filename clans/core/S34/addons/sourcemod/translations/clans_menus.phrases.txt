@@ -153,7 +153,7 @@
 	"m_BuySlots"
 	{
 		"#format"	"{1:i},{2:i},{3:i}"
-		"en"	"Number of slots will be increase by {1}\nCost of uprgade: {2} coins\nYour clan has {3} coins"
+		"en"	"Number of slots will be increase by {1}\nCost of uprgade: {2} coins\nYour clan has {3} coins\n "
 		"ru"	"Слотов будет больше на {1}\nСтоимость расширения: {2} монет\nНа счету клана: {3} монет\n "
 	}
 	
@@ -258,8 +258,8 @@
 	
 	"m_ClanHelp"
 	{
-		"en"	"!cclan - create clan !dclan - delete your clan\n!leaveclan - leave clan !myclan - open clan menu\n!mystats - open your stats !ctop - open top of clans\n!invite - invite a player !caccept - accept invitation\n/cct - clan chat !jclan - join to a clan"
-		"ru"	"!cclan - создать клан !dclan - удалить свой клан\n!leaveclan - покинуть клан !myclan - открыть клановое меню\n!mystats - открыть свою статистику !ctop - открыть топ кланов\n!invite - пригласить игрока !caccept - принять приглашение\n/cct - чат клана !jclan - вступить в клан"
+		"en"	"!cclan - create clan\n!leaveclan - leave clan !myclan - open clan menu\n!mystats - open your stats !ctop - open top of clans\n!invite - invite a player !caccept - accept invitation\n/cct - clan chat !jclan - join to a clan"
+		"ru"	"!cclan - создать клан\n!leaveclan - покинуть клан !myclan - открыть клановое меню\n!mystats - открыть свою статистику !ctop - открыть топ кланов\n!invite - пригласить игрока !caccept - принять приглашение\n/cct - чат клана !jclan - вступить в клан"
 	}
 	
 	"m_AdminClanHelp"
@@ -314,5 +314,36 @@
 	{
 		"en"	"Join the clan"
 		"ru"	"Вступить в клан"
+	}
+
+	"m_GivePerm"
+	{
+		"en"	"Give permission to create a clan"
+		"ru"	"Выдать право на создание клана"
+	}
+
+	"m_Confirmation"
+	{
+		"en"	"Choose player's nickname to give a permission to create a clan"
+		"ru"	"Выберите ник игрока, чтобы выдать разрешение"
+	}
+	
+	"m_ClanRenamingMenu"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"	"Do you want to rename the clan?\nClan renaming price: {1} coins\nYour clan has {2} coins\n "
+		"ru"	"Вы хотите переименовать клан?\nСтоимость переименования клана: {1} монет\nНа счету клана: {2} монет\n "
+	}
+	
+	"m_ClanTagSet"
+	{
+		"en"	"Setting the in-game clan tag"
+		"ru"	"Установка внутриигрового клан тега"
+	}
+	
+	"m_WriteToClanChat"
+	{
+		"en"	"Write to clan chat"
+		"ru"	"Написать в чат клана"
 	}
 }

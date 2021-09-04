@@ -483,7 +483,7 @@
 		"en"	"{lightred}[CSHOP] {lightgreen}Wrong role flag inputted!"
 		"ru"	"{lightred}[CSHOP] {lightgreen}Неверно задана роль!"
 	}
-	
+
 	"c_AdminSetCoins"
 	{
 		"#format"	"{1:s},{2:i}"
@@ -581,11 +581,38 @@
 		"en"	"{green}[CLANS]{lightgreen} {1} set new clan leader - {2}."
 		"ru"	"{green}[CLANS]{lightgreen} {1} поставил нового лидера Вашего клана - {2}."
 	}
-	
+
 	"c_KickYou"
 	{
 		"#format"	"{1:s}"
 		"en"	"{green}[CLANS]{lightgreen} {1} kick you out of the clan."
 		"ru"	"{green}[CLANS]{lightgreen} {1} выгнал Вас из клана."
+	}
+
+	"c_PermGiven"
+	{
+		"#format"	"{1:s}"
+		"en"	"{green}[CLANS]{lightgreen} You gave permission to create a clan to player {1}"
+		"ru"	"{green}[CLANS]{lightgreen} Вы выдали разрешение на создание клана игроку {1}"
+	}
+
+	"c_PermGot"
+	{
+		"#format"	"{1:s}"
+		"en"	"{green}[CLANS]{lightgreen} {1} gave permission to create a clan to you"
+		"ru"	"{green}[CLANS]{lightgreen} Вы получили разрешение на создание клана от {1}"
+	}
+	
+	"c_YouCantCreateClanDueToCD"
+	{
+		"#format"	"{1:i}"
+		"en"	"{lightred}[CLANS]{lightgreen} Clan creation will be available in {1} minutes!"
+		"ru"	"{lightred}[CLANS]{lightgreen} Создание клана будет доступно через {1} минут!"
+	}
+	
+	"c_ClanChatWrite"
+	{
+		"en"	"{green}[CLANS]{lightgreen} Input text to clan chat"
+		"ru"	"{green}[CLANS]{lightgreen} Введите текст для кланового чата"
 	}
 }

@@ -20,7 +20,7 @@ sm_clans_logs N	//1 - to log, 0 - not to log
 sm_clans_logflags N //Set flags for logging. Sum these which you need. If you want to log everything (at version 1.6), set 511
 Flags for logging:
 0			nothing
-1			kills
+1			kills (unavailable now)
 2			changes of coins
 4			renamings of clans
 8			creation/removing/reset clan
