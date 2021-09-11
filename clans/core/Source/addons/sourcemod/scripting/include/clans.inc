@@ -7,7 +7,7 @@
 #include <clans/clients>
 #include <clans/clans>
 
-
+#define MAX_CLAN_NAME 10
 #define MAX_INVITATION_TIME 30							/*		Time in seconds to accept the invitation	*/
 
 #define PERM_INVITE 1

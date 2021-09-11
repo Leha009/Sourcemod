@@ -12,8 +12,7 @@
 #define ClanClient playerID[client]	//Айди игрока в базе данных
 #define BUFF_SIZE 600
 #define LOG_SIZE 100
-#define PLUGIN_VERSION "1.72"
-#define MAX_CLAN_NAME 10
+#define PLUGIN_VERSION "1.73"
 //================================================
 //Flag for CSS v34
 bool g_bCSS34 = false;
@@ -130,7 +129,9 @@ Handle	g_hACMOpened, 		//AdminClanMenuOpened
 		g_hClanAdded,		//ClansAdded
 		g_hClanDeleted,		//ClansDeleted
 		g_hClientAdded,		//ClientAdded
-		g_hClientDeleted;	//ClientDeleted
+		g_hClientDeleted,	//ClientDeleted
+		g_hClanSelectedInList,	//Clans_OnClanSelectedInList	1.8v
+		g_hClanMemberSelectedInList;	//Clans_OnClanMemberSelectedInList	1.8v
 		
 //=====================Permissions=====================//
 Handle	g_hRInvitePerm,				//Invite players to clan
@@ -259,20 +260,6 @@ Action Death(Handle event, const char[] name, bool db)
 	if (victim && attacker && (GetClientTeam(victim) != GetClientTeam(attacker)) && AreClientsInDifferentClans(victim, attacker))
 	{
 		KillFunc(attackerInClanDB, victimInClanDB, 1);
-		/*if(victimInClanDB != -1)
-		{
-			ChangeClientDeathsInClanByID(victimInClanDB, 1);
-		}
-		if(attackerInClanDB != -1)
-		{
-			ChangeClientKillsInClanByID(attackerInClanDB, 1);
-		}*/
-		/*if(CheckForLog(LOG_KILLS) && (victimInClanDB != -1 || attackerInClanDB != -1))
-		{
-			char log_buff[LOG_SIZE];
-			FormatEx(log_buff, sizeof(log_buff), "%T", "L_Kill", LANG_SERVER);
-			DB_LogAction(attacker, false, GetClientClanByID(attackerInClanDB), log_buff, victim, false, GetClientClanByID(victimInClanDB), LOG_KILLS);
-		}*/
 	}
 	return Plugin_Continue;
 }

@@ -120,8 +120,10 @@ native bool Clans_ShowClanMembers(int client, int clanid, int showFlags);
  *
  * @param		client - client's index, who will see clans
  * @param bool showClientClan - flag if client's clan will be shown in menu
+ *
  * info field in menu item - clanid
  * display field in menu item - clan's name
+ *
  * @return		true if successed, false otherwise
  */
-native bool Clans_ShowClanList(int client);
+native bool Clans_ShowClanList(int client, bool showClientClan);

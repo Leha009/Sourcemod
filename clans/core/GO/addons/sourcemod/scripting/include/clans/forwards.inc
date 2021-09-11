@@ -1,4 +1,11 @@
 /**
+ * Calls when clans have been loaded
+ *
+ * @noreturn
+*/
+forward void Clans_OnClansLoaded();
+
+/**
  * Calls when client opens admin clan menu
  *
  * @param 		Handle adminClanMenu - adminMenu handle
@@ -55,11 +62,24 @@ forward void Clans_OnClanStatsOpened(Handle clanStatsMenu, int client);
 forward void Clans_OnPlayerStatsOpened(Handle playerStatsMenu, int client);
 
 /**
- * Calls when clans have been loaded
+ * Calls when player has been selected in list of players of a clan
  *
+ * @param 		Handle clansMenu - menu with all clans
+ * @param 		int client - client's index, who selected the clan
+ * @param 		int option - selected option in the menu
  * @noreturn
 */
-forward void Clans_OnClansLoaded();
+forward void Clans_OnClanMemberSelectedInList(Handle clansMenu, int client, int option);
+
+/**
+ * Calls when clan has been selected in list of all clans
+ *
+ * @param 		Handle clansMenu - menu with all clans
+ * @param 		int client - client's index, who selected the clan
+ * @param 		int option - selected option in the menu
+ * @noreturn
+*/
+forward void Clans_OnClanSelectedInList(Handle clansMenu, int client, int option);
 
 /**
  * Calls when clan has been added

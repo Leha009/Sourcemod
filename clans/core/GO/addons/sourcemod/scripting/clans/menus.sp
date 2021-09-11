@@ -891,6 +891,14 @@ int Clan_ClansSelectMenu(Handle clansMenu, MenuAction action, int client, int op
 			FormatEx(print_buff, sizeof(print_buff), "%T", "c_TranferCoins", client, clientClanCoins);
 			CPrintToChat(client, print_buff);
 		}
+		else
+		{
+			Call_StartForward(g_hClanSelectedInList);
+			Call_PushCell(clansMenu);
+			Call_PushCell(client);
+			Call_PushCell(option);
+			Call_Finish();
+		}
 	}
 	else if(action == MenuAction_End)
 	{

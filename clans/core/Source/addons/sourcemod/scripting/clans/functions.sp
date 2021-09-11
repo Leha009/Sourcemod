@@ -818,14 +818,14 @@ void KillFunc(int attackerID, int victimID, int amount)
 {
 	Transaction txn = SQL_CreateTransaction();
 	char query[400];
-	if(attackerID != -1)
+	if(victimID != -1)
 	{
 		FormatEx(query, sizeof(query), "UPDATE `players_table` SET `player_deaths` = `player_deaths`+'%d' WHERE `player_id` = '%d'", amount, victimID);
 		txn.AddQuery(query);
 		FormatEx(query, sizeof(query), "UPDATE `clans_table` SET `clan_deaths` = `clan_deaths` + '%d' WHERE `clan_id` = (SELECT `player_clanid` FROM `players_table` WHERE `player_id` = '%d')", amount, victimID);
 		txn.AddQuery(query);
 	}
-	if(victimID != -1)
+	if(attackerID != -1)
 	{
 		FormatEx(query, sizeof(query), "UPDATE `players_table` SET `player_kills` = `player_kills`+'%d' WHERE `player_id` = '%d'", amount, attackerID);
 		txn.AddQuery(query);
