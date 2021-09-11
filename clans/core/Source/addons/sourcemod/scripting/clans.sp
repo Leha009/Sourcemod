@@ -12,9 +12,11 @@
 #define ClanClient playerID[client]	//Айди игрока в базе данных
 #define BUFF_SIZE 600
 #define LOG_SIZE 100
-#define PLUGIN_VERSION "1.7"
+#define PLUGIN_VERSION "1.72"
 #define MAX_CLAN_NAME 10
 //================================================
+//Flag for CSS v34
+bool g_bCSS34 = false;
 //Are clan system loaded
 bool g_bClansLoaded = false;
 
@@ -110,8 +112,7 @@ int 	g_iExpandingCost, 		//Price of expansion
 		g_iClanCreationCD,		//Time in minutes when player can create a new clan again (1.7)
 		g_iRenameClanPrice;		//Clan rename price (1.7)
 
-bool	g_bCSS34 = false,		//Flag for CSS v34
-		g_bNoClanTag,			//Player's tag will be empty if player isn't in a clan (true or false)
+bool	g_bNoClanTag,			//Player's tag will be empty if player isn't in a clan (true or false)
 		g_bLeaderChange,		//Flag: can leader set a new leader
 		g_bCoinsTransfer,		//Flag: can clan transfer coins to other clan
 		g_bLeaderLeave;			//Flag: can leader leave his/her clan

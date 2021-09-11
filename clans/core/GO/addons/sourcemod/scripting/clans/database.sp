@@ -38,8 +38,7 @@ void ConnectToDatabase()
     							`clan_kills` INTEGER NOT NULL default '0', \
     							`clan_deaths` INTEGER NOT NULL default '0', \
     							`clan_coins` INTEGER NOT NULL default '0', \
-    							`clan_type` INTEGER default '0') \
-    							CHARACTER SET utf8 COLLATE utf8_general_ci;");
+    							`clan_type` INTEGER default '0');");
     SQL_FastQuery(g_hClansDB, "CREATE TABLE IF NOT EXISTS `players_table` (\
     							`player_id` INTEGER NOT NULL PRIMARY KEY, \
     							`player_name` TEXT, \
@@ -48,8 +47,7 @@ void ConnectToDatabase()
     							`player_role` INTEGER NOT NULL, \
     							`player_kills` INTEGER NOT NULL default '0', \
     							`player_deaths` INTEGER NOT NULL default '0', \
-    							`player_timejoining` INTEGER NOT NULL)\
-    							CHARACTER SET utf8 COLLATE utf8_general_ci;");
+    							`player_timejoining` INTEGER NOT NULL)");
 
     SQL_SetCharset(g_hClansDB, "utf8");
     

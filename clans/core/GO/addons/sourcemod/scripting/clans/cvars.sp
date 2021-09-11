@@ -40,7 +40,7 @@ void RegCVars()
 	g_iRChangeRole = GetConVarInt(g_hRChangeRole);
 	HookConVarChange(g_hRChangeRole, OnConVarChange);
 
-	g_hLogs = CreateConVar("sm_clans_logs", "0", "Flag for logging players' actions: 2 - log to file, 1 - log to sqlite, 0 - not to log", 0, true, 0.0, true, 2.0);
+	g_hLogs = CreateConVar("sm_clans_logs", "0", "Flag for logging players' actions: 2 - log to file (disabled), 1 - log to sqlite, 0 - not to log", 0, true, 0.0, true, 1.0);
 	g_iLogs = GetConVarInt(g_hLogs);
 	HookConVarChange(g_hLogs, OnConVarChange);
 

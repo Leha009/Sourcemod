@@ -236,10 +236,17 @@ void DB_LogCallback(Handle owner, Handle hndl, const char[] error, DataPack dp)
 			FormatTime(date, sizeof(date), "%Y%m%d", time);
 			FormatEx(fileName, sizeof(fileName), "addons/sourcemod/logs/clans/clans_%s.log", date);
 			if(!DirExists("addons/sourcemod/logs/clans"))
-				CreateDirectory("addons/sourcemod/logs/clans", 7);
+				CreateDirectory("addons/sourcemod/logs/clans", 777);
 			file = OpenFile(fileName, "a");
-			file.WriteLine("%s: %s (%d in DB) from %s clan (%d in DB) %s %s (%d in DB) from %s clan (%d in DB). Type = %d", c_time, clientName, clientID, clientClanName, clientClanid, action, targetName, targetID, targetClanName, targetClanid, type);
-			file.Close();
+			if(file != null)
+			{
+				file.WriteLine("%s: %s (%d in DB) from %s clan (%d in DB) %s %s (%d in DB) from %s clan (%d in DB). Type = %d", c_time, clientName, clientID, clientClanName, clientClanid, action, targetName, targetID, targetClanName, targetClanid, type);
+				file.Close();
+			}
+			else
+			{
+				LogError("CLANS LOG: failed to open file. Something wrong with the log file.");
+			}
 			//LogToFileEx(fileName, "%s (%d in DB) from %s clan (%d in DB) %s %s (%d in DB) from %s clan (%d in DB). Type = %d", clientName, clientID, clientClanName, clientClanid, action, targetName, targetID, targetClanName, targetClanid, type);
 		}
 		else	//To sqlite

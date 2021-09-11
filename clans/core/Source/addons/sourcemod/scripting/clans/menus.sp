@@ -85,6 +85,12 @@ int Clan_PlayerClanSelectMenu(Handle playerClanMenu, MenuAction action, int clie
 		}
 		else if(!strcmp(selectedItem, "ClanCreate")) //1.7
 		{
+			if(!createClan[client])
+			{
+				FormatEx(print_buff, sizeof(print_buff), "%T", "c_YouCantCreateClan", client);
+				CPrintToChat(client, print_buff);
+				return;
+			}
 			int timeOfCD = GetTime() - GetLastClanCreationTime(client); //1.7
 			if(g_iClanCreationCD-timeOfCD/60 > 0)
 			{

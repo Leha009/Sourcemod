@@ -370,13 +370,9 @@ void UpdatePlayersClanTag()
  * @param int client - player's id
  */
 void UpdatePlayerClanTag(int client)
-{
+{	
 	if(ClanClient != -1 && WantToChangeTag(client))
 	{
-		/*char query[150];
-		FormatEx(query, sizeof(query), "SELECT `player_role` FROM `players_table` WHERE `player_id` = '%d'", ClanClient);
-		g_hClansDB.Query(ClanTagCallback, query, client);*/
-		//if(GetClientRoleByID(ClanClient) == CLIENT_LEADER)
 		if(g_iClientData[client][CLIENT_ROLE] == CLIENT_LEADER)
 		{
 			char leaderTag[16];
@@ -388,7 +384,7 @@ void UpdatePlayerClanTag(int client)
 			CS_SetClientClanTag(client, g_sClientData[client][CLIENT_CLANNAME]);
 		}
 	}
-	else if(g_bNoClanTag || WantToChangeTag(client))
+	else if(WantToChangeTag(client))
 	{
 		CS_SetClientClanTag(client, "");
 	}

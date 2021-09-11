@@ -29,8 +29,8 @@ bool WantToChangeTag(int client)
 	buffer[0] = 0;
 	GetClientCookie(client, g_hClanTagCookie, buffer, sizeof(buffer));
 	if(strcmp(buffer, "") == 0)
-		return true;
-	return StringToInt(buffer) == 1;
+		return g_bNoClanTag == true;
+	return StringToInt(buffer) == 1 || g_bNoClanTag;
 }
 
 /**
